@@ -14,8 +14,130 @@
   }
 }
 
+/* globals.css */
+
+/* Basic resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #4a5d94; /* Calming purplish-blue page background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+.layout-container {
+  width: 90%;
+  max-width: 400px;
+  height: 80vh;
+  background-color: #5865f2; /* Bluish-purple chat container background */
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Chat container */
+.chat-container {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  max-width: 75%;
+  padding: 12px 18px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* AI message style */
+.chat-bubble.ai {
+  background-color: #f3f4fb; /* Light color for AI messages */
+  color: #333;
+  align-self: flex-start;
+  border: 1px solid #ddd;
+}
+
+/* User message style */
+.chat-bubble.user {
+  background-color: #0a74da; /* Bluish color for user messages */
+  color: #ffffff;
+  align-self: flex-end;
+  border: 1px solid rgba(10, 116, 218, 0.5);
+}
+
+/* Input form styling */
+.input-form {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.input-field {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  background-color: #e8eaf6; /* Light bluish background for input field */
+  color: #333;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+}
+
+/* Send button styling */
+.submit-btn {
+  background-color: #0a74da;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn:hover {
+  background-color: #075bb1;
+}
+
+.submit-btn svg {
+  fill: white;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .layout-container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
 }
